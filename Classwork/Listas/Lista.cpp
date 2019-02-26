@@ -51,6 +51,7 @@ bool Lista::listaVacia() {
 	if (cab == nullptr) {
 		return true;
 	}
+	return false;
 }
 
 Nodo* Lista::buscar(int n) {
@@ -64,6 +65,33 @@ Nodo* Lista::buscar(int n) {
 	return nullptr;
 };
 
+bool Lista::eliminar(int n) {
+	if (!listaVacia()) {
+		if (cab->getVal() == n) {
+			Nodo *aux = cab;
+			cab = cab->getSiguiente();
+			delete aux;
+			return true;
+		}
+		else 
+		{
+			Nodo *ant = getCabeza();
+			Nodo *act = getCabeza()->getSiguiente();
+			while (act != nullptr) {
+				if (act->getVal() == n) {
+					ant->setSiguiente(act->getSiguiente());
+					delete act;
+					return true;
+				}
+				ant = ant->getSiguiente();
+				act = act->getSiguiente();
+			}
+					
+		}
+	}
+	return false;
+};
+
 void Lista::agregarOrdenado(int n) {
 	Nodo* nuevo = new Nodo();
 	nuevo->setVal(n);
@@ -74,7 +102,8 @@ void Lista::agregarOrdenado(int n) {
 		if (n < getCabeza()->getVal()) {
 			agregarInicio(n);
 		}
-		else {
+		else 
+		{
 			Nodo *ant = getCabeza();
 			Nodo *act = getCabeza()->getSiguiente();
 

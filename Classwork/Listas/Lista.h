@@ -15,4 +15,5 @@ public:
 	bool listaVacia();
 	Nodo* buscar(int);
 	void agregarOrdenado(int);
+	bool eliminar(int);
 };
