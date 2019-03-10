@@ -35,8 +35,8 @@ Nodo* Lista::getCabeza() {
 	return cab;
 };
 
-void Lista::setCabeza(Nodo *_cab) {
-	cab = _cab;
+void Lista::setCabeza(Nodo *cab) {
+	this->cab = cab;
 };
 
 void Lista::mostrar() {
@@ -68,15 +68,15 @@ Nodo* Lista::buscar(int n) {
 bool Lista::eliminar(int n) {
 	if (!listaVacia()) {
 		if (cab->getVal() == n) {
-			Nodo *aux = cab;
+			Nodo* aux = cab;
 			cab = cab->getSiguiente();
 			delete aux;
 			return true;
 		}
 		else 
 		{
-			Nodo *ant = getCabeza();
-			Nodo *act = getCabeza()->getSiguiente();
+			Nodo* ant = getCabeza();
+			Nodo* act = getCabeza()->getSiguiente();
 			while (act != nullptr) {
 				if (act->getVal() == n) {
 					ant->setSiguiente(act->getSiguiente());

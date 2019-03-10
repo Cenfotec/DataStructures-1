@@ -9,6 +9,6 @@ public:
 	Nodo();
 	void setVal(int n);
 	int getVal();
-	void setSiguiente(Nodo *);
+	void setSiguiente(Nodo*);
 	Nodo* getSiguiente();
 };

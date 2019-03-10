@@ -8,7 +8,7 @@ Nodo::Nodo()
 	this->sig = nullptr;
 }
 
-void::Nodo::setVal(int n) {
+void Nodo::setVal(int n) {
 	val = n;
 };
 
@@ -16,8 +16,8 @@ int Nodo::getVal() {
 	return val;
 };
 
-void::Nodo::setSiguiente(Nodo * _sig) {
-	sig = _sig;
+void::Nodo::setSiguiente(Nodo* sig) {
+	this->sig = sig;
 };
 
 Nodo* Nodo::getSiguiente() {

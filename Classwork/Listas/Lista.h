@@ -10,7 +10,7 @@ public:
 	~Lista();
 	void agregarInicio(int);
 	Nodo* getCabeza();
-	void setCabeza(Nodo *_cab);
+	void setCabeza(Nodo *cab);
 	void mostrar();
 	bool listaVacia();
 	Nodo* buscar(int);
