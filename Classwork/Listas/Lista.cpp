@@ -8,6 +8,7 @@ using namespace std;
 Lista::Lista()
 {
 	cab = NULL;
+	longitud = 0;
 }
 
 
@@ -25,10 +26,10 @@ void Lista::agregarInicio(int n) {
 
 	}
 	else {
-
 		nuevo->setSiguiente(cab);
 		cab = nuevo;
 	}
+	longitud++;
 };
 
 Nodo* Lista::getCabeza() {
@@ -38,6 +39,10 @@ Nodo* Lista::getCabeza() {
 void Lista::setCabeza(Nodo *cab) {
 	this->cab = cab;
 };
+
+int Lista::getLongitud() {
+	return longitud;
+}
 
 void Lista::mostrar() {
 	Nodo *aux = getCabeza();
@@ -71,6 +76,7 @@ bool Lista::eliminar(int n) {
 			Nodo* aux = cab;
 			cab = cab->getSiguiente();
 			delete aux;
+			--longitud;
 			return true;
 		}
 		else 
@@ -81,6 +87,7 @@ bool Lista::eliminar(int n) {
 				if (act->getVal() == n) {
 					ant->setSiguiente(act->getSiguiente());
 					delete act;
+					--longitud;
 					return true;
 				}
 				ant = ant->getSiguiente();
@@ -97,6 +104,7 @@ void Lista::agregarOrdenado(int n) {
 	nuevo->setVal(n);
 	if (getCabeza() == nullptr) {
 		setCabeza(nuevo);
+		longitud++;
 	}
 	else {
 		if (n < getCabeza()->getVal()) {
@@ -113,6 +121,7 @@ void Lista::agregarOrdenado(int n) {
 			}
 			nuevo->setSiguiente(ant->getSiguiente());
 			ant->setSiguiente(nuevo);
+			longitud++;
 		}
 	}
 }

@@ -4,6 +4,7 @@ class Lista
 {
 private:
 	Nodo * cab;
+	int longitud;
 
 public:
 	Lista();
@@ -16,4 +17,5 @@ public:
 	Nodo* buscar(int);
 	void agregarOrdenado(int);
 	bool eliminar(int);
+	int getLongitud();
 };
