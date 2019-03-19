@@ -125,3 +125,29 @@ void Lista::agregarOrdenado(int n) {
 		}
 	}
 }
+
+bool Lista::eliminarPos(int n) {
+	if (!listaVacia() && !(n > longitud)) {
+		Nodo* ant = cab;
+		Nodo* act = cab->getSiguiente();
+		for (int i = 0; i < n; i++) {
+			ant = ant->getSiguiente();
+			act = act->getSiguiente();
+		}
+		ant->setSiguiente(act->getSiguiente());
+		delete act;
+		--longitud;
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
+void Lista::mostrarInverso(Nodo* nodo) {
+	if (nodo != nullptr)
+	{
+		mostrarInverso(nodo->getSiguiente());
+		cout << nodo->getVal() << endl;
+	}
+}
