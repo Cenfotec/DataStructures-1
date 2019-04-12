@@ -1,3 +1,6 @@
+let pOneWordH1 = document.querySelector('#pOneWordH1');
+let pTwoWordH1 = document.querySelector('#pTwoWordH1');
+
 let pOneInputWord = document.querySelector('#pOneInputWord');
 let pTwoInputWord = document.querySelector('#pTwoInputWord');
 let pOneButton = document.querySelector('#pOneButton');

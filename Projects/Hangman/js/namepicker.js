@@ -17,4 +17,7 @@ function loadWordPickerScene() {
     document.querySelector('#wordSelectionSection').style.display = 'block';
     document.querySelector('#gameDiv').style.display = 'none';
     document.querySelector('#nextRoundScene').style.display = 'none';
+
+    pOneWordH1.innerText = storagePlayers[0].name;    
+    pTwoWordH1.innerText = storagePlayers[1].name;
 }
