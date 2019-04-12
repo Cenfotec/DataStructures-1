@@ -72,11 +72,9 @@ function loadGameScene() {
 }
 
 function createGame() {
-    //let players = JSON.parse(localStorage.getItem('players'));
     let players = storagePlayers;
     players[0].words = playerOneWords;
     players[1].words = playerTwoWords;
-    //localStorage.setItem('players', JSON.stringify(players));
     storagePlayers = players;
 
 
@@ -98,13 +96,10 @@ function createGame() {
     rounds.add(round5);
     rounds.add(round6);
 
-    //let games = JSON.parse(localStorage.getItem('games'));
     let games = storageGames;
     let id = games.size()+1;
 
     let game = new Game(id, rounds);
     games.push(game);
-    //localStorage.setItem('games', JSON.stringify(games));
     storageGames = games;
-    console.log(storageGames);
 }

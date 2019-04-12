@@ -11,8 +11,6 @@ function loadWordPickerScene() {
     storagePlayers.push(playerOne);
     storagePlayers.push(playerTwo);
 
-    //localStorage.setItem('players', JSON.stringify(players));
-
     document.querySelector('#nameSelectionSection').style.display = 'none';
     document.querySelector('#wordSelectionSection').style.display = 'block';
     document.querySelector('#gameDiv').style.display = 'none';

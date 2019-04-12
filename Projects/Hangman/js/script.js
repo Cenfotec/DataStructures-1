@@ -185,10 +185,6 @@ function initializeElements() {
 	tryCount.innerText = misses + "/" + maxMisses;
 }
 
-function getWord() {
-	return 'Word';
-}
-
 function nextRound(winnerState) {
 	updateRound(winnerState);
 	nextRoundScene.style.display = 'block';
@@ -209,10 +205,8 @@ function updateRound(winnerState) {
 	// 0 = won - 1 = lost
 	if (winnerState == 0) {	
 		roundActual.winner = roundActual.playerWhoGuesses;
-		console.log(roundActual.winner);
 	} else if (winnerState == 1) {
 		roundActual.winner = roundActual.playerWithWord;
-		console.log(roundActual.winner);
 	}
 	roundActual.finished = true;
 	
@@ -283,8 +277,6 @@ function endGame(winnerState) {
 			pTwoWins++;
 		}
 	}
-
-	console.log(pOneWins + ' - ' + pTwoWins);
 
 	// Compare wins
 	if (pOneWins > pTwoWins) {
