@@ -1,0 +1,163 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hangman</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link href="./css/material.min.css" rel="stylesheet">
+	<link href="./css/game.css" rel="stylesheet">
+	<link href="./css/selection.css" rel="stylesheet">
+	<link href="./css/nameSelection.css" rel="stylesheet">
+	<link href="./css/wordSelection.css" rel="stylesheet">
+	<link href="./css/endGameSection.css" rel="stylesheet">
+</head>
+<body>	
+
+	<div id="nameSelectionSection" class="selection">
+		<div>
+			<div class="inputBoxWrapper">
+				<h1>Player #1</h1>
+				<label>Name</label>
+				<input type="text" id="pOneInputName">
+			</div>
+			<div class="inputBoxWrapper">
+				<h1>Player #2</h1>
+				<label>Name</label>
+				<input type="text" id="pTwoInputName">
+			</div>
+		</div>
+		<div>
+			<button type="button" id="nextWordSelectionButton" class="nextButton">Next</button>
+		</div>	
+	</div>
+
+
+
+
+
+	<div id="wordSelectionSection" class="selection">
+		<div>
+			<div class="inputBoxWrapper">
+				<h1>Player #1</h1>
+				<label>Word</label>
+				<input type="text" id="pOneInputWord">
+				<button type="button" id="pOneButton" data-player='one'>+</button>
+				<ul>
+					<li id="pOneWOne">1.</li>
+					<li id="pOneWTwo">2.</li>
+					<li id="pOneWThree">3.</li>
+				</ul>
+			</div>
+			<div class="inputBoxWrapper">
+				<h1>Player #2</h1>
+				<label>Word</label>
+				<input type="text" id="pTwoInputWord">
+				<button type="button" id="pTwoButton" data-player='two'>+</button>
+				<ul>
+					<li id="pTwoWOne">1.</li>
+					<li id="pTwoWTwo">2.</li>
+					<li id="pTwoWThree">3.</li>
+				</ul>
+			</div>
+		</div>
+		<div>
+			<button type="button" id="playGameButton" class="nextButton">Play</button>
+		</div>
+	
+	</div>
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<div id="nextRoundScene">
+		<h1 id="roundWinnerH1"></h1>
+		<button type="button" id="nextRoundButton" class="nextButton">Next Round</button>
+	</div>
+
+	<div id="gameDiv">
+		<div id="drawing">
+			<div><img id="dMain" src="./img/dMain.png"></div>
+		</div>
+
+		<div id="tryCount"><span></span></div>
+
+		<div id="wordWrapper"></div>
+
+		<div id="keyboardWrapper">
+			<h1 id="playerTurn"></h1>
+			<div id="keyboardLine1">
+				<div id="keyA" class="key">A</div>
+				<div id="keyB" class="key">B</div>
+				<div id="keyC" class="key">C</div>
+				<div id="keyD" class="key">D</div>
+				<div id="keyE" class="key">E</div>
+				<div id="keyF" class="key">F</div>
+				<div id="keyG" class="key">G</div>
+				<div id="keyH" class="key">H</div>
+				<div id="keyI" class="key">I</div>
+				<div id="keyJ" class="key">J</div>
+			</div>
+			<div id="keyboardLine2">	
+				<div id="keyK" class="key">K</div>
+				<div id="keyL" class="key">L</div>
+				<div id="keyM" class="key">M</div>
+				<div id="keyN" class="key">N</div>
+				<div id="keyO" class="key">O</div>
+				<div id="keyP" class="key">P</div>
+				<div id="keyQ" class="key">Q</div>
+				<div id="keyR" class="key">R</div>
+				<div id="keyS" class="key">S</div>
+			</div>
+			<div id="keyboardLine3">
+				<div id="keyT" class="key">T</div>
+				<div id="keyU" class="key">U</div>
+				<div id="keyV" class="key">V</div>
+				<div id="keyW" class="key">W</div>
+				<div id="keyX" class="key">X</div>
+				<div id="keyY" class="key">Y</div>
+				<div id="keyZ" class="key">Z</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="endGameSection">
+		<div>
+			<h1 id="pOneNameH1"></h1>
+			<h3 id="pOneTotalWinsH1"></h3>
+		</div>
+		<div>
+			<h1 id="pTwoNameH1"></h1>
+			<h3 id="pTwoTotalWinsH1"></h3>
+		</div>
+		<h5 id="endGameMessage"></h5>
+		<button type="button" id="playAgainButton" class="nextButton">Play again</button>
+	</div>
+
+
+	<script src="./bl/ListaNodos.js"></script>
+	<script src="./bl/ColaNodos.js"></script>
+	<script src="./bl/PilaNodos.js"></script>
+	<script src="./bl/Player.js"></script>
+	<script src="./bl/Round.js"></script>
+	<script src="./bl/Game.js"></script>
+	<script src="./js/storage.js"></script>
+	<script src="./js/material.min.js"></script>
+	<script src="./js/script.js"></script>
+	<script src="./js/namepicker.js"></script>
+	<script src="./js/wordpicker.js"></script>	
+</body>
+</html>

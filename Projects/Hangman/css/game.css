@@ -1,0 +1,196 @@
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #F2F2F2;
+	overflow: hidden;
+	font-family: 'Roboto', sans-serif;
+}
+
+::selection {
+	background-color: transparent;
+}
+
+nav {
+	width: 100%;
+	height: 60px;
+	top: 0;
+	background-color: #FFF;
+	box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+	position: fixed;
+	overflow: hidden;
+}
+
+
+#keyboardWrapper {
+	width: 600px;
+	margin: 2.5% auto;
+	background-color: #D5D5D8;
+	padding: 5px;
+	text-align: center;
+	border-radius: 4px 4px 10px 10px;
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.key {
+	width: 45px;
+	height: 45px;
+	min-width: 45px;
+	min-height: 45px;
+	background-color: #FCFCFC;
+	text-align: center;
+	line-height: 45px;
+	color: #212121;
+	font-size: 20px;
+	border-bottom: 2px solid #8B8D8F;
+	border-radius: 5px;
+	margin: 2.5px;
+	transition: all 0.1s linear;
+	cursor: default;
+	display: inline-block;
+}
+
+.key:hover:not(.keyActive) {
+	background-color: #E0E0E0;
+	border-bottom: 1px solid #8B8D8F;
+}
+
+.keyHover {
+	background-color: #E0E0E0;
+	border-bottom: 1px solid #8B8D8F;
+}
+
+.keyActive {
+	background-color: #BCBFC3;
+	border: none;
+	box-shadow: inset 0 0.5px 5px rgba(33, 33, 33, 0.5);
+}
+
+#keyboardLine1, #keyboardLine2, #keyboardLine3 {
+	min-height: 52px;
+}
+
+
+#wordWrapper {
+	width: 90%;
+	height: 10px;
+	margin: 30% auto 0 auto;
+	text-align: center;
+	padding-bottom: 10px;
+}
+
+.letterSpace {
+	position: relative;
+	display: inline-block;
+	width: 40px;
+	height: 2px;
+	margin: 5px;
+	background-color: #212121;
+	text-align: center;
+}
+
+.letter {
+	position: absolute;
+	color: #212121;
+	top: -15px;
+	font-size: 22px;
+	transform: translate(-50%, -50%);
+}
+
+.correctSpace {
+	background-color: #00695C;
+}
+
+.correctLetter {
+	color: #00695C;
+	z-index: 2;
+}
+
+.correctLetter::after {
+	position: absolute;
+	top: -2;
+	right: -6px;
+	display: block;
+	content: '';
+	width: 25px;
+	height: 25px;
+	opacity: 0.1;
+	z-index: 1;
+}
+
+#tryCount {
+	position: absolute;
+	width: 75px;
+	height: 75px;
+	right: 100px;
+	top: 150px;
+	border-radius: 50%;
+	background-color: #009688;
+	text-align: center;
+	display: table;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+#tryCount span {
+	color: #FFF;
+	font-size: 22px;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+
+
+
+
+
+#drawing {
+	position: relative;
+	width: 100%;
+	margin-top: 5%;
+}
+
+#dMain {
+	position: absolute;
+	width: 300px;
+	height: 280px;
+	top: -525px;
+	right: 50%;
+	transform: translate(50%, 50%);
+}
+
+
+
+::-webkit-scrollbar {
+	background-color: #BEBEBE;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #707070;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: #5B5B5B;
+}
+
+::-webkit-scrollbar-thumb:active {
+	background-color: #444;
+}
+
+#playerTurn {
+	position: absolute;
+	font-size: 22px;
+	top: 425px;
+}
+
+#nextRoundScene {
+	z-index: 99;
+	margin: 0 auto;
+	position: absolute;
+	text-align: center;
+    transform: translateX(50%) translateY(-50%);
+	background-color: #FFF;
+	border-radius: 5px;
+	border: 1px solid #BEBEBE;
+	width: 50%;
+	height: 60%;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}

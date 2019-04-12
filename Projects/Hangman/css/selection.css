@@ -1,0 +1,51 @@
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #F2F2F2;
+	overflow: hidden;
+	font-family: 'Roboto', sans-serif;
+}
+
+::selection {
+	background-color: transparent;
+}
+
+.selection {
+    width: 100%;
+    height: 50%;
+    margin: 0 auto;
+    position: relative;
+    top: 50%;
+    transform: perspective(1px) translateY(-50%);
+    border: 1px solid red;
+    text-align: center;
+
+}
+
+.inputBoxWrapper {
+    display: inline-block;
+    width: 30%;
+    padding: 25px;
+    border-radius: 3px;
+    background-color: #FFF;
+    box-shadow: 0 1px 8px 0 rgba(0,0,0,.2), 0 3px 4px 0 rgba(0,0,0,.14), 0 3px 3px -2px rgba(0,0,0,.12);
+    border: 1px solid blue;
+}
+
+.nextButton {
+    margin-top: 5%;
+    border: none;
+    outline: none;
+    padding: 10px 30px;
+    background-color: #26A69A;
+    cursor: pointer;
+    color: #FFF;
+    font-size: 18px;
+    border-radius: 3px;
+    box-shadow: 0 1px 8px 0 rgba(0,0,0,.2), 0 3px 4px 0 rgba(0,0,0,.14), 0 3px 3px -2px rgba(0,0,0,.12);
+}
+
+.nextButton:hover {
+    background-color: #00796B;
+}
+
