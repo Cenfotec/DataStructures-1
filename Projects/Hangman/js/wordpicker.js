@@ -25,10 +25,13 @@ playGameButton.addEventListener('click', loadGameScene)
 
 function addWordToList() {
     if (this.getAttribute('data-player') == 'one') {
-        addWordToWordBox('one', pOneInputWord.value);
-        
+        if (validateWordPOneInput()) {
+            addWordToWordBox('one', pOneInputWord.value.trim());
+        }     
     } else if (this.getAttribute('data-player') == 'two') {
-        addWordToWordBox('two', pTwoInputWord.value);
+        if (validateWordPTwoInput()) {
+            addWordToWordBox('two', pTwoInputWord.value.trim());
+        }      
     }
 }
 
@@ -37,25 +40,25 @@ function addWordToWordBox(player, word) {
     if (player == 'one') {
         if (pOneWOne.innerText == '1.') {
             pOneWOne.innerText = '1. ' + word.replace(/./g, '*');
-            playerOneWords.push(pOneInputWord.value)
+            playerOneWords.push(pOneInputWord.value.trim())
         } else if (pOneWTwo.innerText == '2.') {
             pOneWTwo.innerText = '2. ' + word.replace(/./g, '*');
-            playerOneWords.push(pOneInputWord.value)
+            playerOneWords.push(pOneInputWord.value.trim())
         } else if (pOneWThree.innerText == '3.') {
             pOneWThree.innerText = '3. ' + word.replace(/./g, '*');
-            playerOneWords.push(pOneInputWord.value)
+            playerOneWords.push(pOneInputWord.value.trim())
         }
         pOneInputWord.value = '';
     } else if (player == 'two') {
         if (pTwoWOne.innerText == '1.') {
             pTwoWOne.innerText = '1. ' + word.replace(/./g, '*');
-            playerTwoWords.push(pTwoInputWord.value)
+            playerTwoWords.push(pTwoInputWord.value.trim())
         } else if (pTwoWTwo.innerText == '2.') {
             pTwoWTwo.innerText = '2. ' + word.replace(/./g, '*');
-            playerTwoWords.push(pTwoInputWord.value)
+            playerTwoWords.push(pTwoInputWord.value.trim())
         } else if (pTwoWThree.innerText == '3.') {
             pTwoWThree.innerText = '3. ' + word.replace(/./g, '*');
-            playerTwoWords.push(pTwoInputWord.value)
+            playerTwoWords.push(pTwoInputWord.value.trim())
         }
         pTwoInputWord.value = '';
     }
@@ -102,4 +105,22 @@ function createGame() {
     let game = new Game(id, rounds);
     games.push(game);
     storageGames = games;
+}
+
+function validateWordPOneInput() {
+    let valid = true;
+    if (pOneInputWord.value.trim() == '') {
+        valid = false;
+        pOneInputWord.style.border = '1px solid red';
+    }
+    return valid;
+}
+
+function validateWordPTwoInput() {
+    let valid = true;
+    if (pTwoInputWord.value.trim() == '') {
+        valid = false;
+        pTwoInputWord.style.border = '1px solid red';
+    }
+    return valid;
 }
